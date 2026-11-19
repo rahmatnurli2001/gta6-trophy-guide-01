@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <p class="eyebrow">PlayStation 5 &middot; 55 Trophies &middot; Platinum Road</p>
+    <h1>GTA VI <span>Trophy Guide</span></h1>
+    <p class="subtitle">Every trophy, every missable, every collectible &mdash; tracked in one place. Earn them all and take the platinum home to Leonida.</p>
+  </div>
+  <section class="progress-card" aria-label="Platinum progress">
+    <div class="progress-top">
+      <div>
+        <p class="progress-label">Your progress</p>
+        <p class="progress-big"><span id="progress-count">0/55</span> <span class="progress-pct" id="progress-pct">0%</span></p>
+      </div>
+      <div class="grade-counts" id="grade-counts"></div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <p class="progress-note" id="progress-note">Tap a trophy card to mark it earned. Progress saves on this device.</p>
+  </section>
+</header>
+
+<main>
+  <div class="toolbar" id="toolbar">
+    <div class="search-wrap">
+      <label class="visually-hidden" for="search">Search trophies</label>
+      <input type="search" id="search" placeholder="Search name, description or guide&hellip;" autocomplete="off">
+    </div>
+    <div class="filters" role="group" aria-label="Filters">
+      <div class="filter-group" data-filter="kind">
+        <span class="filter-caption">Type</span>
+        <button type="button" data-value="all" class="active">All</button>
+        <button type="button" data-value="story">Story</button>
+        <button type="button" data-value="missable">Missable</button>
+        <button type="button" data-value="collectible">Collectibles</button>
+        <button type="button" data-value="activity">Activities</button>
+      </div>
+      <div class="filter-group" data-filter="grade">
+        <span class="filter-caption">Grade</span>
+        <button type="button" data-value="all" class="active">All</button>
+        <button type="button" data-value="platinum">Platinum</button>
+        <button type="button" data-value="gold">Gold</button>
+        <button type="button" data-value="silver">Silver</button>
+        <button type="button" data-value="bronze">Bronze</button>
+      </div>
+      <div class="filter-group" data-filter="status">
+        <span class="filter-caption">Status</span>
+        <button type="button" data-value="all" class="active">All</button>
+        <button type="button" data-value="earned">Earned</button>
+        <button type="button" data-value="not-earned">Not earned</button>
+      </div>
+    </div>
+    <div class="toolbar-actions">
+      <label class="spoiler-toggle">
+        <input type="checkbox" id="spoiler-toggle" checked>
+        <span class="toggle-track"><span class="toggle-knob"></span></span>
+        Hide story spoilers
+      </label>
+      <button type="button" id="export-btn" class="action-btn">Export progress</button>
+      <button type="button" id="import-btn" class="action-btn">Import progress</button>
+      <input type="file" id="import-file" accept=".json,application/json" class="visually-hidden">
+    </div>
+  </div>
+
+  <section class="roadmap" id="roadmap" aria-label="Roadmap to platinum">
+    <h2>Road to Platinum</h2>
+    <p class="section-intro">Five stages, in order. Finish the story first &mdash; several trophies can only be earned on the way through.</p>
+    <ol class="roadmap-stages" id="roadmap-stages"></ol>
+  </section>
+
+  <section class="missable" id="missable" aria-label="Missable trophies">
+    <h2>Missable Trophies &mdash; Do Not Skip These</h2>
+    <p class="section-intro">These can be missed if you pass the moment. Read the warning before you play past it.</p>
+    <div class="missable-list" id="missable-list"></div>
+  </section>
+
+  <section class="trophy-section" aria-label="All trophies">
+    <div class="section-head">
+      <h2>All Trophies</h2>
+      <p id="result-count" class="result-count"></p>
+    </div>
+    <div class="trophy-grid" id="trophy-grid"></div>
+    <p class="empty-state" id="empty-state" hidden>No trophies match your search and filters. Try clearing a filter.</p>
+  </section>
+
+  <section class="detail-panel" id="detail-panel" hidden aria-label="Trophy details">
+    <button type="button" class="detail-close" id="detail-close" aria-label="Close details">&times;</button>
+    <div id="detail-body"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Unofficial fan-made guide. GTA and Grand Theft Auto are trademarks of their respective owners. Progress is stored only in this browser.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
